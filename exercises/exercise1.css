@@ -4,15 +4,16 @@ section {
   gap: 1rem;
   align-items: center;
 }
-button {
+#randomBtn {
   width: 200px;
+  text-transform:uppercase;
   height: 80px;
   border-radius: 1rem;
+  border: solid 3px #f685342c;
+  background-color: var(--ctabg);
 }
-button:hover {
-  background-color: antiquewhite;
-  scale: 1.1;
-  font-size: large;
+#randomBtn:hover {
+  color: rgb(170, 89, 31);
 }
 #randomBox {
   height: 100px;

@@ -1,15 +1,19 @@
+:root {
+  --ctabg: #fae4b5;
+  --ctaborder: #f685342c;
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: darkolivegreen;
+  color: rgba(228, 100, 93, 0.845);
 }
 h1 {
   padding: 0.5rem;
 }
 body {
-  background-color: rgb(248, 199, 93);
+  background-color: rgb(252, 216, 139);
   margin: 1rem;
 }
 header {
@@ -19,14 +23,15 @@ header {
 }
 header > a {
   text-decoration: none;
-  border: 2px solid darkolivegreen;
+  border: 2px solid var(--ctaborder);
+  background-color: var(--ctabg);
   border-radius: 1rem;
-  background-color: aliceblue;
   width: fit-content;
   padding: 0.75rem;
 }
 header > a:hover {
-  color: black;
+  color: rgb(138, 72, 72);
+  scale: 1.1;
 }
 main {
   display: grid;
@@ -37,9 +42,9 @@ main {
 section {
   padding: 2rem;
   gap: 2rem;
-  background-color: rgb(241, 171, 64);
+  background-color: rgb(254, 196, 110);
   border-radius: 1.25rem;
-  border: solid 0.25rem olive;
+  border: solid 0.25rem rgba(246, 133, 52, 0.172);
 }
 #stuff {
   display: grid;
@@ -47,7 +52,7 @@ section {
   gap: 1rem;
 }
 #linkBox {
-  background-color: chartreuse;
+  background-color:var(--ctabg);
 }
 #faq > p {
   max-width: 45ch;
@@ -59,7 +64,8 @@ li > a {
   text-decoration: none;
 }
 li > a:hover {
-  color: olivedrab;
+  color: rgb(138, 72, 72);
+  text-decoration: underline;
 }
 .pulse {
   animation: 1.5s infinite ease-in-out 5s pulsing;

@@ -1,11 +1,13 @@
 section {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
+  width: auto;
 }
 #randomBtn {
-  width: 200px;
+  width: 10rem;
   text-transform:uppercase;
   height: 80px;
   border-radius: 1rem;
@@ -14,13 +16,4 @@ section {
 }
 #randomBtn:hover {
   color: rgb(170, 89, 31);
-}
-#randomBox {
-  height: 100px;
-  width: 100%;
-  text-align: center;
-  display: none;
-}
-#randomResult {
-  font-size: 5rem;
 }

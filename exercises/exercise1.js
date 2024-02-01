@@ -7,7 +7,7 @@ const rResult = document.querySelector("h2");
 //Values hardcoded in the EventListener function-call.
 //Show rBox, replace its empty value with a max generated number of 100 and do console.log().
 function randomNumber(value, result) {
-  let random = Math.floor(Math.random() * value);
+  let random = Math.floor(Math.random() * value + 1);
   console.log("Computer says: " + random);
   //I know I know, assignment says return HTML, but this is better practice to prevent XSS-attacks (or so the internet says)!
   //This will return just the text contained.

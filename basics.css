@@ -40,12 +40,27 @@ main {
   gap: 1rem;
 }
 section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   height: fit-content;
+  width: auto;
   padding: 2rem;
-  gap: 2rem;
+  gap: 1rem;
   background-color: rgb(254, 196, 110);
   border-radius: 1.25rem;
   border: solid 0.25rem rgba(246, 133, 52, 0.172);
+  align-items: center;
+}
+li {
+  list-style: none;
+}
+li > a {
+  text-decoration: none;
+}
+li > a:hover {
+  color: rgb(138, 72, 72);
+  text-decoration: underline;
 }
 #stuff {
   display: grid;
@@ -66,15 +81,17 @@ section {
 #faq > p {
   max-width: 45ch;
 }
-li {
-  list-style: none;
+#randomBtn {
+  width: fit-content;
+  text-transform:uppercase;
+  height: fit-content;
+  border-radius: 1rem;
+  border: solid 3px #f685342c;
+  background-color: var(--ctabg);
+  padding: 1rem;
 }
-li > a {
-  text-decoration: none;
-}
-li > a:hover {
-  color: rgb(138, 72, 72);
-  text-decoration: underline;
+#randomBtn:hover {
+  color: rgb(170, 89, 31);
 }
 .pulse {
   animation: 1.5s infinite ease-in-out 5s pulsing;

@@ -1,6 +1,6 @@
 // Make a function that returns a randomly generated number between 0 and 100
 "use strict";
-const rButton = document.querySelector("#randomBtn");
+const rButton = document.querySelector(".randomBtn");
 const rResult = document.querySelector("h2");
 
 //Function called from clicking rButton.

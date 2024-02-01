@@ -6,11 +6,28 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: rgba(228, 100, 93, 0.845);
 }
+::placeholder {
+  text-align: center;
+}
+input {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-color: var(--ctabg) 2px solid;
+  max-width: fit-content;
+  max-height: fit-content;
+  text-align: center;
+}
 h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 400;
   padding: 0.5rem;
+}
+h2,
+h3 {
+  padding: 0.25rem;
 }
 body {
   background-color: rgb(252, 216, 139);
@@ -68,7 +85,7 @@ li > a:hover {
   gap: 1rem;
 }
 #linkBox {
-  background-color:var(--ctabg);
+  background-color: var(--ctabg);
 }
 #linkBox > h2 {
   font-weight: 800;
@@ -81,16 +98,19 @@ li > a:hover {
 #faq > p {
   max-width: 45ch;
 }
-#randomBtn {
+.hidden {
+  display: none;
+}
+.randomBtn {
   width: fit-content;
-  text-transform:uppercase;
+  text-transform: uppercase;
   height: fit-content;
   border-radius: 1rem;
   border: solid 3px #f685342c;
   background-color: var(--ctabg);
   padding: 1rem;
 }
-#randomBtn:hover {
+.randomBtn:hover {
   color: rgb(170, 89, 31);
 }
 .pulse {

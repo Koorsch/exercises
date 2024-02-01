@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../basics.css">
     <title>Exercise 2 - Guess the number</title>
 </head>
+
 <body>
     <header>
         <a class="pulse" href="../basics.html">Go Back</a>
@@ -13,14 +15,20 @@
         <span></span>
     </header>
     <main>
-        <section id="guessNumber">
-            <h2>Click to see if you can guess the correct number!</h2>
-            <input type="text" name="" id="#guessedNumber" value="Write a number between 0 and 100!">
-            <input id="randomBtn" type="button" value="Guess!">
+        <section>
+            <h2>Will you win?</h2>
+            <div id="rolls" class="hidden">
+                <p>You wrote: <span id="yourGuess"></span></p>
+                <p>Computer guessed: <span id="computerGuess"></span></p>
+            </div>
+            <div>
+                <input type="text" name="guessNumber" id="guessedNumber" value="" placeholder="Number between 0-100">
+                <input class="randomBtn" id="randomBtn" type="button" value="Guess!">
+            </div>
         </section>
         <footer></footer>
-        <script type="module" src="exercise1.js"></script>
         <script type="module" src="exercise2.js"></script>
     </main>
 </body>
+
 </html>

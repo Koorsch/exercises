@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3 - Rock, Paper & Scissors</title>
+    <link rel="stylesheet" href="../basics.css">
+    <style>
+        #buttonChoices {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        #results {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        #tracker {
+            text-align: center;
+        }
+
+        #choices {
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a class="pulse" href="../basics.html">Go Back</a>
+        <h1>Rock Paper Scissors</h1>
+        <span></span>
+    </header>
+    <main>
+        <section id="gameWindow">
+            <h2>Can you beat the computer?</h2>
+            <div>
+                <div id="choices">
+                    <p><span id="playerChoice"></span></p>
+                    <p><span id="computerChoice"></span></p>
+                </div>
+                <div>
+                    <span id="result"></span>
+                </div>
+                <div id="buttonChoices">
+                    <button class="randomBtn" id="rock">Rock</button>
+                    <button class="randomBtn" id="paper">Paper</button>
+                    <button class="randomBtn" id="scissors">Scissors</button>
+                </div>
+            </div>
+            <div id="tracker" class="hidden">
+                <h3>Your results so far:</h3>
+                <div id="results">
+                    <p>Wins: <span id="wins"></span></p>
+                    <p>Losses: <span id="losses"></span></p>
+                    <p>Draws: <span id="draws"></span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+    <script type="module" src="exercise3.js"></script>
+</body>
+
+</html>

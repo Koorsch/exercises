@@ -8,16 +8,16 @@ const result = document.querySelector("h2");
 const yourGuess = document.querySelector("#yourGuess");
 const computerGuess = document.querySelector("#computerGuess");
 
-let chances = { win: 0, loss: 0, draw: 0 };
-
 function checkNumber(number) {
   let randNumber = Math.floor(Math.random() * 100) + 1;
 
   if (number != Number(number)) {
     console.log("Input entered not a number!");
+  } else if (number > 100) {
+    result.textContent = "Number between 0-100, please!";
   } else if (number === randNumber) {
     console.log(`You guessed (${number}) and it was correct!`);
-    result.textContent = "You guessed correct!";
+    result.textContent = "Congratulations!";
   } else if (number < randNumber) {
     console.log(`You guess (${number}) is lower than the computer(${randNumber}), try again!`);
     result.textContent = "You guessed lower!";
@@ -33,5 +33,5 @@ function checkNumber(number) {
 }
 
 randBtn.addEventListener("click", () => {
-  checkNumber(inputBox.value);
+  checkNumber(Number(inputBox.value));
 });

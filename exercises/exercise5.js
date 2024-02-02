@@ -1,6 +1,7 @@
 "use strict";
 
-const output = document.querySelector("h2");
+const output1 = document.querySelector("h2");
+const output2 = document.querySelector("h3");
 const inputHeight = document.querySelector("#inputFieldHeight");
 const inputWidth = document.querySelector("#inputFieldWidth");
 
@@ -8,12 +9,14 @@ const meters = document.querySelector("#meters").addEventListener("click", () =>
   let height = Number(inputHeight.value);
   let width = Number(inputWidth.value);
   let squared = squareMeters(height, width);
-  output.textContent = `Meters squared: ${squared}²`;
+  output1.textContent = `Height + Width: ${height + width}`;
+  output2.textContent = `Meters squared: ${squared}²`;
 });
 const feet = document.querySelector("#feet").addEventListener("click", () => {
   let convertToFeet = Number(inputHeight.value) + Number(inputWidth.value);
   let sendFeet = metersToFeet(convertToFeet);
-  output.textContent = `Meters to feet: ${sendFeet}`;
+  output1.textContent = `Height + Width: ${sendFeet}`;
+  output2.textContent = `Feet²: ${sendFeet * 2}`;
 });
 
 function squareMeters(height, width) {

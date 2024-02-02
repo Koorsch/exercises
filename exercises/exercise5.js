@@ -9,14 +9,14 @@ const meters = document.querySelector("#meters").addEventListener("click", () =>
   let height = Number(inputHeight.value);
   let width = Number(inputWidth.value);
   let squared = squareMeters(height, width);
-  output1.textContent = `Height + Width: ${height + width}`;
-  output2.textContent = `Meters squared: ${squared}²`;
+  output1.textContent = `Height + Width: ${height + width}m`;
+  output2.textContent = `Meters squared: ${squared}m²`;
 });
 const feet = document.querySelector("#feet").addEventListener("click", () => {
   let convertToFeet = Number(inputHeight.value) + Number(inputWidth.value);
   let sendFeet = metersToFeet(convertToFeet);
-  output1.textContent = `Height + Width: ${sendFeet}`;
-  output2.textContent = `Feet²: ${sendFeet * 2}`;
+  output1.textContent = `Height + Width: ${sendFeet}ft`;
+  output2.textContent = `Feet²: ${sendFeet * 2}ft²`;
 });
 
 function squareMeters(height, width) {

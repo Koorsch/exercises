@@ -1,3 +1,3 @@
 export function randomNumber(max) {
-  return Math.floor(Math.round() * max + 1);
+  return Math.floor(Math.random() * max + 1);
 }

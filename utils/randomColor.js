@@ -1,13 +1,14 @@
-export function getRandomHSLColor() {
-  const r = getRandomNumber(255);
-  const g = getRandomNumber(255);
-  const b = getRandomNumber(255);
+import { randomNumber } from "./randomNumber.js";
+export function randomRGBColor() {
+  const r = randomNumber(255);
+  const g = randomNumber(255);
+  const b = randomNumber(255);
   return `rgb(${r}, ${g}, ${b})`;
 }
-export function getRandomHSLColor() {
-  const h = getRandomNumber(360);
-  const s = getRandomNumber(100);
-  const l = getRandomNumber(100);
+export function randomHSLColor() {
+  const h = randomNumber(360);
+  const s = randomNumber(100);
+  const l = randomNumber(100);
 
   return `hsl(${h}, ${s}%, ${l}%)`;
 }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7 - Filtering</title>
+    <script type="module" src="exercise7.js"></script>
+    <link rel="stylesheet" href="../basics.css">
+    <style>
+        div {
+            display: flex;
+            align-items: center;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a class="pulse" href="../index.html">Go Back</a>
+        <h1>Filtering lists</h1>
+        <span></span>
+    </header>
+    <main>
+        <section>
+            <div>
+                <h2>Filter by:</h2>
+                <button class="randomBtn" data-filter="*">Show all data</button>
+                <button class="randomBtn" data-filter="isElectric">Electric</button>
+                <button class="randomBtn" data-filter="passengers">2+ seats</button>
+                <button class="randomBtn" data-filter="ownedBy">Owned by Jonas</button>
+                <button class="randomBtn" data-filter="fuel">Ryebread-powered</button>
+            </div>
+            <ul>
+                <li><strong>Type</strong></li>
+                <li><strong>Fuel</strong></li>
+                <li><strong>Passengers</strong></li>
+                <li><strong>Stops</strong></li>
+                <li><strong>Owned By</strong></li>
+                <li><strong>Is Electric</strong></li>
+                <li><strong>Is tandstrong</strong></li>
+            </ul>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

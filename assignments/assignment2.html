@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="../basics.css">
     <script type="module" src="assignment2.js"></script>
     <title>Assignment 2 - Bar Chart</title>
+    <style>
+        #barWindow {
+            height: 200px;
+            width: 200px;
+            max-width: fit-content;
+            background-color: white;
+            border: var(--ctaborder);
+            justify-items: center;
+        }
+
+        .bar {
+            height: var(--height);
+            background-color: color-mix(in hsl, red, green calc(var(--height) * 1%));
+        }
+    </style>
 </head>
 
 
@@ -18,9 +33,10 @@
     </header>
     <main>
         <section id="barChartWindow">
-            <ul class="barWindow"></ul>
+            <ul id="barWindow" class="hidden"></ul>
             <button class="randomBtn" id="start">Generate!</button>
             <button class="randomBtn hidden" id="stop">Stop</button>
+            <button class="randomBtn hidden" id="clear">Clear and re-run</button>
         </section>
     </main>
     <footer></footer>

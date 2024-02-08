@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../basics.css">
+    <script type="module" src="exercise9.js"></script>
+    <title>Exercise 9 - Language switcher</title>
+    <style>
+        strong {
+            color: var(--ctabg2);
+            font-size: larger;
+            text-decoration: underline;
+        }
+
+        div {
+            padding: 1rem;
+
+            & #header {
+                background-color: var(--ctabg2);
+            }
+
+            & #content {
+                background-color: white;
+            }
+
+            & #footer {
+                background-color: var(--ctabg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a class="pulse" href="../index.html">Go Back</a>
+        <h1>Choose a language.</h1>
+        <span></span>
+    </header>
+    <main>
+        <section>
+            <h2 class="hidden">You chose <strong></strong> as your language</h2>
+            <label>
+                Change to:
+                <select class="langChange" name="langChange">
+                    <option value="en">English</option>
+                    <option value="da">Danish</option>
+                    <option value="se">Swedish</option>
+                </select>
+            </label>
+            <div id="window" class="hidden">
+                <div id="header"></div>
+                <div id="content"></div>
+                <div id="footer"></div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

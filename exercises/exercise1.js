@@ -9,7 +9,6 @@ const rResult = document.querySelector("h2");
 function randomNumber(value, result) {
   let random = Math.floor(Math.random() * value + 1);
   console.log("Computer says: " + random);
-  //I know I know, assignment says return HTML, but this is better practice to prevent XSS-attacks (or so the internet says)!
   //This will return just the text contained.
   result.textContent = "Random number generated: " + random;
 }

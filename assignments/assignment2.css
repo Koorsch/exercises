@@ -1,0 +1,17 @@
+#barWindow {
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+  gap: 1ch;
+  block-size: 100px;
+  background-color: white;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+li {
+  /* --height: 40; */
+  inline-size: 3ch;
+  height: calc(var(--height) * 1px);
+  background-color: color-mix(in hsl, red, green calc(var(--height) * 1%));
+}

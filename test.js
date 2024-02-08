@@ -27,3 +27,13 @@ animal.forEach((pet) => {
   console.log(`This is ${isCat(pet)}, because it is a ${pet.type}. Its name is ${pet.name}`);
 });
  */
+
+const object = {
+  firstName: "Klaus",
+  age: 59,
+  student: false,
+};
+
+const getName = "firstName";
+
+console.log(`Name: ${object[getName]}, aged ${object.age}. Student: ${object.student}`);

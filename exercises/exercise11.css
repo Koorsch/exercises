@@ -1,0 +1,66 @@
+:root {
+  --bg: #fae4b5;
+  --bg-head: hotpink;
+  --bg-main: hotpink;
+  --bg-footer: hotpink;
+  --p-col: hotpink;
+  --col: salmon;
+}
+[data-theme="hawaii"] {
+  --bg: bisque;
+  --bg-head: yellow;
+  --bg-main: gold;
+  --bg-footer: orange;
+  --p-col: hotpink;
+}
+[data-theme="dark"] {
+  --bg: black;
+  --bg-head: black;
+  --bg-main: blac;
+  --bg-footer: black;
+  --p-col: hotpink;
+}
+[data-theme="light"] {
+  --bg: beige;
+  --bg-head: white;
+  --bg-main: lightgrey;
+  --bg-footer: lightgrey;
+  --p-col: yellowrod;
+}
+select {
+  padding: 0.25rem;
+  background-color: var(--bg);
+}
+section {
+  background-color: var(--bg);
+}
+p,
+label,
+option,
+select {
+  color: var(--p-col);
+  max-width: 45ch;
+}
+h2,
+h3 {
+  color: var(--col);
+}
+#header {
+  background-color: var(--bg-head);
+  display: flex;
+  place-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+#main {
+  background-color: var(--bg-main);
+  color: var(--p-col);
+  width: 100%;
+}
+
+#footer {
+  background-color: var(--bg-footer);
+  color: var(--col);
+  width: 100%;
+}

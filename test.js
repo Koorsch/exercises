@@ -102,9 +102,26 @@ const csv = "cat,dog,bird";
 console.log(csv.split(",").join(" ").toLocaleLowerCase()); 
 */
 
-let theText = "Jeg er en tekst hvor nogle ord skal erstattes med nogle andre ord";
+/* let theText = "Jeg er en tekst hvor nogle ord skal erstattes med nogle andre ord";
 let splitText = theText.split("ord");
 console.log(`Med Split: ${splitText.join("ting")}`);
 
 let replaceText = theText.replaceAll("ord", "kød");
 console.log(`Med Replace: ${replaceText}`);
+ */
+
+document.querySelector("button").addEventListener("click", btnClick);
+
+function btnClick() {
+  document.querySelector("#ball").addEventListener("animationend", animationEnd);
+  document.querySelector("#ball").addEventListener("animationiteration", animationEnd);
+  document.querySelector("#ball").classList.add("ani");
+}
+
+function animationEnd(evt) {
+  //If event of the css object animation is not =< to the set animation iterations, run until true
+  if (evt.type === "animationend") {
+    document.querySelector("#ball").classList.remove("ani");
+  }
+  console.log("AnimationEnd", evt);
+}

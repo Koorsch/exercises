@@ -1,30 +1,52 @@
-"use strict";
-
+// "use strict";
 window.addEventListener("DOMContentLoaded", start);
 
-const allAnimals = [];
+const Animal = {
+    name: "-default name-",
+    desc: "-no desc-",
+    type: "-unknown-",
+    age: 0,
+};
+const allAnimals = []
+
 
 function start( ) {
-    console.log("ready");
-
     loadJSON();
 }
 
 
 function loadJSON() {
-    fetch("animals.json")
+    fetch("exercise13.json")
     .then( response => response.json() )
     .then( jsonData => {
         // when loaded, prepare objects
-        prepareObjects( jsonData );
+        console.log("Inputdata: ", jsonData)
+        prepareObjects(jsonData);
     });
 }
 
-function prepareObjects( jsonData ) {
-    jsonData.forEach( jsonObject => {
-        // TODO: Create new object with cleaned data - and store that in the allAnimals array
-        
-        // TODO: MISSING CODE HERE !!!
+function prepareObjects(jsonData) {
+    jsonData.forEach(jsonObject => {
+        // Create new object
+        const animal = Object.create(Animal)
+        // Get data from json Object
+        const fullName = jsonObject.fullname;
+
+        const firstSpace = fullName.indexOf(" ");
+        const secondspace = fullName.indexOf(" ", firstSpace +1)
+        const lastSpace = fullName.lastIndexOf(" ");
+
+        const name = fullName.substring(0, firstSpace);
+        const desc = fullName.substring(secondspace +1, lastSpace);
+        const type = fullName.substring(lastSpace+1);
+
+        // Put cleaned data in the created object
+        animal.name = name;
+        animal.desc = desc;
+        animal.type = type;
+        animal.age = jsonObject.age;
+        //Add animal to global array
+        allAnimals.push(animal);
     });
 
     displayList();
@@ -38,7 +60,7 @@ function displayList() {
     allAnimals.forEach( displayAnimal );
 }
 
-function displayAnimal( animal ) {
+function displayAnimal(animal) {
     // create clone
     const clone = document.querySelector("template#animal").content.cloneNode(true);
 
@@ -49,7 +71,7 @@ function displayAnimal( animal ) {
     clone.querySelector("[data-field=age]").textContent = animal.age;
 
     // append clone to list
-    document.querySelector("#list tbody").appendChild( clone );
+    document.querySelector("#list tbody").appendChild(clone);
 }
 
 

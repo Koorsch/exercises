@@ -1,6 +1,7 @@
-"use strict";
-
+// "use strict";
 window.addEventListener("DOMContentLoaded", start);
+
+
 
 let allAnimals = [];
 
@@ -12,54 +13,155 @@ const Animal = {
   age: 0,
 };
 
-function start() {
-  console.log("ready");
-
-  // TODO: Add event-listeners to filter and sort buttons
-
-  loadJSON();
+//Set global variable as an object
+let settings = {
+  filterBy: "all",
+  sortBy: "name",
+  sortDirection: "asc"
 }
 
-async function loadJSON() {
+
+function start() {
+  console.log("readying!");
+  makeButtons();
+  prepJSON();
+}
+
+function makeButtons() {
+  document.querySelectorAll("[data-action='filter']").forEach(buttonFilter => buttonFilter.addEventListener("click", selectFilter))
+  document.querySelectorAll("[data-action='sort']").forEach(buttonSort => buttonSort.addEventListener("click", selectSort))
+  console.log("Buttons created!")
+}
+
+//Buttonfunctions
+  //Filterbutton
+function selectFilter(evt) {
+  const thisFilter = evt.target.dataset.filter;
+  console.log("You chose filter by: ", thisFilter)
+  setFilter(thisFilter)
+}
+
+function setFilter(filter) {
+  settings.filterBy = filter;
+  buildList(filter);
+}
+  //Sortbutton
+function selectSort(evt) {
+  const sortBy = evt.target.dataset.sort
+  const sortDir = evt.target.dataset.sortDirection;
+  if (sortDir === "asc") {
+    evt.target.dataset.sortDirection = "desc";
+  } else {
+    evt.target.dataset.sortDirection = "asc";
+  }
+  console.log("You chose sorting by: ", sortBy, " and ", sortDir)
+  setSort(sortBy, sortDir)
+}
+function setSort(sortBy, sortDir) {
+  settings.sortBy = sortBy;
+  settings.sortDirection = sortDir;
+  buildList();
+}
+//Filter functions start
+function filterList(filteredList) {
+  if (settings.filterBy === "cat") {
+    filteredList = allAnimals.filter(isCat)
+  } else if (settings.filterBy === "dog") {
+    filteredList = allAnimals.filter(isDog)
+  } 
+  return filteredList;
+}
+function isCat(animal) {
+  return animal.type === "cat"
+}
+function isDog(animal) {
+  return animal.type === "dog"
+}
+//Filter functions end
+
+//Sort functions start
+function sortList(sortedList) {
+  // let sortedList = allAnimals;
+  let direction =  1;
+  if (settings.sortDirection === "desc") {
+    direction = -1;
+  } else {
+    direction = 1;
+  }
+  sortedList = sortedList.sort(sortItBy)
+  //Move function inside to make a generic helper function
+    function sortItBy(animalA, animalB) {
+      if (animalA[settings.sortBy] < animalB[settings.sortBy]) {
+        return 1 * direction;
+      } else {
+        return -1 * direction;
+      }
+    }
+  return sortedList;
+}
+//Sort functions end
+
+function buildList() {
+  const currentList = filterList(allAnimals);
+  const sortedList = sortList(currentList)
+
+  displayList(sortedList);
+}
+
+
+//Step1
+  //Get the data from the JSON file
+async function prepJSON() {
   const response = await fetch("assignment4.json");
   const jsonData = await response.json();
-
   // when loaded, prepare data objects
-  prepareObjects(jsonData);
+  console.log("The data! ", jsonData)
+  prepData(jsonData);
+}
+//Step2
+  //Clean data
+function prepData(everyAnimal) {
+  everyAnimal.forEach(thisAnimal => {
+    // Create new object
+    const animal = Object.create(Animal)
+    // Get data from json Object
+    const fullName = thisAnimal.fullname;
+
+    //Clean up the data
+    const firstSpace = fullName.indexOf(" ");
+    const secondspace = fullName.indexOf(" ", firstSpace +1)
+    const lastSpace = fullName.lastIndexOf(" ");
+
+    const name = fullName.substring(0, firstSpace);
+    const desc = fullName.substring(secondspace +1, lastSpace);
+    const type = fullName.substring(lastSpace+1);
+
+    // Put cleaned data in the created object
+    animal.name = name;
+    animal.desc = desc;
+    animal.type = type;
+    animal.age = thisAnimal.age;
+    //Add animal to global array
+    allAnimals.push(animal);
+});
+
+//Show the list
+displayList(allAnimals);
 }
 
-function prepareObjects(jsonData) {
-  allAnimals = jsonData.map(preapareObject);
-
-  // TODO: This might not be the function we want to call first
-  displayList(allAnimals);
-}
-
-function preapareObject(jsonObject) {
-  const animal = Object.create(Animal);
-
-  const texts = jsonObject.fullname.split(" ");
-  animal.name = texts[0];
-  animal.desc = texts[2];
-  animal.type = texts[3];
-  animal.age = jsonObject.age;
-
-  return animal;
-}
-
-function displayList(animals) {
+function displayList(allAnimals) {
   // clear the list
   document.querySelector("#list tbody").innerHTML = "";
 
   // build a new list
-  animals.forEach(displayAnimal);
+  allAnimals.forEach(displayAnimal);
 }
 
 function displayAnimal(animal) {
   // create clone
   const clone = document.querySelector("template#animal").content.cloneNode(true);
 
-  // set clone data
+  // set clone data by using data-field property
   clone.querySelector("[data-field=name]").textContent = animal.name;
   clone.querySelector("[data-field=desc]").textContent = animal.desc;
   clone.querySelector("[data-field=type]").textContent = animal.type;
@@ -68,3 +170,4 @@ function displayAnimal(animal) {
   // append clone to list
   document.querySelector("#list tbody").appendChild(clone);
 }
+

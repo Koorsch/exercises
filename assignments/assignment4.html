@@ -6,12 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="../basics.css">
-  <link rel="stylesheet" href="assignment4.css">
   <script type="module" src="assignment4.js"></script>
   <title>Animalbase</title>
+  <style>
+    [data-action] {
+  cursor: pointer;
+  }
+  [data-action='sort']:hover {
+    color: var(--ctaborder);
+    text-decoration: underline;
+  }
+  th,td,tr {
+    padding: 0.5rem;
+    text-align: left;
+  }
+  #sorting th.sortby {
+  text-decoration: underline;
+  }
+
+  #list {
+  border-collapse: collapse;
+  }
+  #list tbody tr:nth-child(odd) td {
+  background-color: var(--ctabg);
+  border-right: var(--ctabg2) 1px dotted;
+  }
+
+  </style>
 </head>
 
 <body>
+  <header>
+    <a class="pulse" href="../index.html">Go Back</a>
+    <h1>Animalbase (sort & filter)</h1>
+    <span></span>
+</header>
+<main>
+  <section>
   <h1>Animals</h1>
   <p>
     Filter:
@@ -35,7 +66,7 @@
       <!-- animal template will be copied and inserted here -->
     </tbody>
   </table>
-
+</section>
   <template id="animal">
     <tr>
       <td data-field="name">NAME</td>
@@ -44,6 +75,8 @@
       <td data-field="age">AGE</td>
     </tr>
   </template>
+</main>
+  <footer></footer>
 </body>
 
 </html>

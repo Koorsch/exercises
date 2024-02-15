@@ -35,10 +35,9 @@ function makeBars() {
   }
 } */
 
-//Styled up and start,stop,clear -- TBD
-/* "use strict";
+//Styled up and start,stop,clear -- To Be Done (at some point)
+/* 
 import { randomNumber } from "../utils/randomNumber.js";
-
 const stop = document.querySelector("#stop");
 const start = document.querySelector("#start");
 const clear = document.querySelector("#clear");

@@ -1,4 +1,5 @@
 "use strict";
+import { animateText } from "./utils/animateText.js";
 /* const people = ["Harry", "Ron", "Hermoine", "Neville"];
 
 function testParams(a, b, c, d) {
@@ -110,7 +111,7 @@ let replaceText = theText.replaceAll("ord", "kød");
 console.log(`Med Replace: ${replaceText}`);
  */
 
-document.querySelector("button").addEventListener("click", btnClick);
+/* document.querySelector("button").addEventListener("click", btnClick);
 
 function btnClick() {
   document.querySelector("#ball").addEventListener("animationend", animationEnd);
@@ -124,4 +125,9 @@ function animationEnd(evt) {
     document.querySelector("#ball").classList.remove("ani");
   }
   console.log("AnimationEnd", evt);
-}
+} */
+
+const input = document.querySelector("input").value;
+const textToAnimate = document.querySelector("[data-dance]");
+const btn = document.querySelector("#crazy");
+btn.addEventListener("click", animateText(input));

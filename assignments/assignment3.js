@@ -1,35 +1,33 @@
+import { $, $$ } from "../utils/dom.js";
+
+const text = $("p");
+const btn = $("button");
+const info = $("h2");
+let word;
+
 const profanity = [
   { bad: "var", good: "const" },
   { bad: "float", good: "grid" },
   { bad: "marquee", good: "just don't" },
 ];
 
-const btn = document.querySelector("button").addEventListener("click", checkSFW);
-let text = document.querySelector("p").textContent;
-
 function checkSFW() {
-  //Method1 iterating through the array
-  profanity.forEach((curse) => {
-    text = text.replaceAll(curse.bad, curse.good);
-    console.log(`Replacing ${curse.bad} with ${curse.good}`);
+  if (text.textContent.includes(word)) {
+    info.textContent = "Still NSFW!";
+  } else info.textContent = "It's all SFW!";
+}
+
+function makeItSFW() {
+  profanity.forEach((word) => {
+    if (word.bad && word.good) {
+      const replaced = text.textContent.replaceAll(word.bad, word.good);
+      text.textContent = replaced;
+    } else {
+      word = word.bad.substring();
+      word.style = "background-color: green";
+    }
+    checkSFW();
   });
-
-  //Method2 splitting and joining
-  //   const splittedArr = text.split(profanity[0].bad);
-  //   console.log("splittedArr", splittedArr);
-  //   console.log("joinedArr", splittedArr.join(profanity[0].good));
-  //   profanity.forEach((curse) => {
-  //     text = text.split(curse.bad).join(curse.good);
-  //   });
-
-  document.querySelector("p").textContent = text;
 }
 
-// #### Not quite done yet
-// missing flags to see if it has been switched out
-// if switched, apply color around the switched words.
-function isSafe() {
-  if (text.includes(profanity.bad)) {
-  }
-  return !profanity.some((item) => text.includes(item.bad));
-}
+btn.addEventListener("click", makeItSFW);

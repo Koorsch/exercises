@@ -6,14 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="test.js"></script>
     <link rel="stylesheet" href="test.css">
-    <title>Document</title>
+    <script type="module" src="utils/animateText.js"></script>
+    <title>TestBox</title>
+    <style>
+        [data-dance] {
+            span {
+                display: inline-block;
+                white-space: break-spaces;
+                animation: jump 3s calc(var(--i) * .1s) infinite;
+            }
+        }
+
+        @keyframes jump {
+            50% {
+                translate: 0 -50%;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-    <button>Click me</button>
-
-    <div id="ball"></div>
+    <section>
+        <button>Click me</button>
+        <div id="ball"></div>
+    </section>
+    <section>
+        <h3 data-dance>This will be changed and animated</h3>
+        <input type="text" value="" placeholder="Write something!">
+        <button id="crazy">Click to animate</button>
+    </section>
 </body>
 
 </html>

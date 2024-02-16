@@ -5,42 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rock, Paper, Scissors</title>
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../basics.css">
+    <link rel="stylesheet" href="assignment1.css">
+    <script type="module" src="assignment1.js"></script>
+    <title>Rock, Paper, Scissors</title>
 </head>
 
 <body>
-    <h1>Rock, Paper, Scissors</h1>
+    <header>
+        <a class="pulse" href="../index.html">Go Back</a>
+        <h1>Rock, Paper & Scissors</h1>
+        <span></span>
+    </header>
+    <main>
+        <section>
+            <h2>Play a game?</h2>
 
-    <div id="gamefield">
-        <div id="player1" class="player"></div>
-        <div id="player2" class="player"></div>
-        <div id="texts">
-            <div id="lose" class="hidden">
-                <h1>
-                    You lose
-                </h1>
+            <div id="gamefield">
+                <div id="player1" class="player"></div>
+                <div id="player2" class="player"></div>
             </div>
-            <div id="win" class="hidden">
-                <h1>
-                    You win
-                </h1>
-            </div>
-            <div id="draw" class="hidden">
-                <h1>
-                    It's a draw
-                </h1>
-            </div>
-        </div>
-    </div>
 
-    <div id="buttons">
-        <button class="rock"></button>
-        <button class="paper"></button>
-        <button class="scissors"></button>
-    </div>
-
+            <div id="buttons">
+                <button class="rock">Rock</button>
+                <button class="paper">Paper</button>
+                <button class="scissors">Scissors</button>
+            </div>
+            <div id="counter" class="hidden">
+                <div>
+                    <h3>Wins:</h3>
+                    <p id="wins"></p>
+                </div>
+                <div>
+                    <h3>Draws:</h3>
+                    <p id="draws"></p>
+                </div>
+                <div>
+                    <h3>Losses:</h3>
+                    <p id="losses"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
 </body>
 
 </html>

@@ -1,14 +1,7 @@
-body {
-  margin: 0;
-  background-color: #444059;
-  font-family: "Luckiest Guy", cursive;
-  color: #eee;
-}
-
-h1 {
+/* h1 {
   text-align: center;
   font-size: 8vw;
-}
+} */
 
 #gamefield {
   position: relative;
@@ -27,26 +20,27 @@ h1 {
 
 .player {
   transform: scale(var(--rot), 1);
-  width: 40vw;
-  height: 40vw;
+  width: 20vw;
+  height: 20vw;
   background-size: 100%;
-  background-image: url(hand_rock.png);
+  background-image: url(media/rpc/hand_rock.png);
+  background-repeat: no-repeat;
 }
 
 .player.rock {
-  background-image: url(hand_rock.png);
+  background-image: url(media/rpc/hand_rock.png);
 }
 
 .player.paper {
-  background-image: url(hand_paper.png);
+  background-image: url(media/rpc/hand_paper.png);
 }
 
 .player.scissors {
-  background-image: url(hand_scissors.png);
+  background-image: url(media/rpc/hand_scissors.png);
 }
 
 .player.shake {
-  background-image: url(hand_rock.png);
+  background-image: url(media/rpc/hand_rock.png);
   transform-origin: left center;
   animation: shake 1.8s ease-in 1 forwards;
 }
@@ -84,18 +78,6 @@ h1 {
   }
 }
 
-#texts {
-  position: absolute;
-  width: 100%;
-  margin-top: 10vw;
-  pointer-events: none;
-}
-
-#texts h1 {
-  color: #ffde53;
-  text-shadow: 4px 4px 1px red, -4px -4px 1px red, 4px -4px 1px red, -4px 4px 1px red;
-}
-
 .hidden {
   display: none;
 }
@@ -103,6 +85,7 @@ h1 {
 #buttons {
   display: flex;
   justify-content: space-around;
+  gap: 1rem;
   max-width: 50vw;
 }
 
@@ -111,21 +94,25 @@ h1 {
 }
 
 #buttons button {
-  background-size: 100%;
+  color: transparent;
+  background-size: 50%;
   border-radius: 10vw;
   width: 10vw;
   height: 10vw;
   transition: filter 0.8s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 button.rock {
-  background-image: url(button_rock.png);
+  background-image: url(media/rpc/button_rock.png);
 }
 
 button.paper {
-  background-image: url(button_paper.png);
+  background-image: url(media/rpc/button_paper.png);
 }
 
 button.scissors {
-  background-image: url(button_scissors.png);
+  background-image: url(media/rpc/button_scissors.png);
 }

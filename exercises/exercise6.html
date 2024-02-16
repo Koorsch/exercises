@@ -17,17 +17,17 @@
     </header>
     <main>
         <section>
-            <h2>Write a number for the computer to guess!</h2>
+            <h2>Can the computer beat you? <span></span></h2>
             <span id="guessedNumber" class="hidden"></span>
+            <span id="computerNumber" class="hidden"></span>
             <input type="text" name="yourNumber" id="yourNumber" placeholder="Write a number.">
             <span id="lockedNumber">(Click button for a random number)</span>
             <div id="gameStart" class="hidden">
-                <button class="randomBtn" id="lowGuess">Too low!</button>
+                <button class="randomBtn" id="lowGuess">Go lower!</button>
                 <button class="randomBtn" id="correctGuess">Correct!</button>
-                <button class="randomBtn" id="highGuess">Too high!</button>
+                <button class="randomBtn" id="highGuess">Go higher!</button>
             </div>
             <button class="randomBtn" id="start">Start!</button>
-            <div id="wrongGuesses" class="hidden"></div>
         </section>
     </main>
     <footer></footer>

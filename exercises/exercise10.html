@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="../basics.css">
     <script type="module" src="exercise10.js"></script>
     <title>Exercise 10 - Playing with strings</title>
+    <style>
+        #results {
+            flex-direction: column;
+            width: 100%;
+            gap: 1rem
+        }
+
+        p {
+            font-weight: 700;
+        }
+
+        span {
+            font-weight: 400;
+            text-decoration: underline;
+            padding: 1rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,10 +37,19 @@
             <input type="text" placeholder="Write a name">
             <button class="randomBtn">String it!</button>
             <div id="results" class="hidden">
-                <p>String-methods: <span id="stringMethods"></span></p>
-                <p>Name-parts: <span id="nameParts"></span></p>
-                <p>3 capitalization: <span id="threeCap"></span></p>
-                <p>Real capitalization: <span id="realCap"></span></p>
+                <h3>You put in: <span id="fullString"></span></h3>
+                <p>Split up in:</p>
+                <div id="nameParts">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <p id="firstName">First Name: <span></span></p>
+                <p id="middleName">Middle name: <span class="max10"></span></p>
+                <p id="lastName">Last name: <span></span></p>
+                <p>First letter BIG: <span id="realCap"></span></p>
+                <p>3rd letter BIG: <span id="threeCap"></span></p>
             </div>
         </section>
     </main>

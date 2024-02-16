@@ -10,28 +10,33 @@
   <title>Animalbase</title>
   <style>
     [data-action] {
-  cursor: pointer;
-  }
-  [data-action='sort']:hover {
-    color: var(--ctaborder);
-    text-decoration: underline;
-  }
-  th,td,tr {
-    padding: 0.5rem;
-    text-align: left;
-  }
-  #sorting th.sortby {
-  text-decoration: underline;
-  }
+      cursor: pointer;
+    }
 
-  #list {
-  border-collapse: collapse;
-  }
-  #list tbody tr:nth-child(odd) td {
-  background-color: var(--ctabg);
-  border-right: var(--ctabg2) 1px dotted;
-  }
+    [data-action='sort']:hover {
+      color: var(--ctaborder);
+      text-decoration: underline;
+    }
 
+    th,
+    td,
+    tr {
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    #sorting th.sortby {
+      text-decoration: underline;
+    }
+
+    #list {
+      border-collapse: collapse;
+    }
+
+    #list tbody tr:nth-child(odd) td {
+      background-color: var(--ctabg);
+      border-right: var(--ctabg2) 1px dotted;
+    }
   </style>
 </head>
 
@@ -40,42 +45,42 @@
     <a class="pulse" href="../index.html">Go Back</a>
     <h1>Animalbase (sort & filter)</h1>
     <span></span>
-</header>
-<main>
-  <section>
-  <h1>Animals</h1>
-  <p>
-    Filter:
-    <button class="filter" data-action="filter" data-filter="cat">Only Cats</button>
-    <button class="filter" data-action="filter" data-filter="dog">Only Dogs</button>
-    <button class="filter" data-action="filter" data-filter="*">all</button>
-  </p>
+  </header>
+  <main>
+    <section>
+      <h1>Animals</h1>
+      <p>
+        Filter:
+        <button class="randomBtn filter" data-action="filter" data-filter="cat">Only Cats</button>
+        <button class="randomBtn filter" data-action="filter" data-filter="dog">Only Dogs</button>
+        <button class="randomBtn filter" data-action="filter" data-filter="*">all</button>
+      </p>
 
-  <hr>
+      <hr>
 
-  <table id="list">
-    <thead>
-      <tr id="sorting">
-        <th data-action="sort" data-sort-direction="asc" data-sort="name">Name</th>
-        <th data-action="sort" data-sort-direction="asc" data-sort="type">Type</th>
-        <th data-action="sort" data-sort-direction="asc" data-sort="desc">Description</th>
-        <th data-action="sort" data-sort-direction="asc" data-sort="age">Age</th>
+      <table id="list">
+        <thead>
+          <tr id="sorting">
+            <th data-action="sort" data-sort-direction="asc" data-sort="name">Name</th>
+            <th data-action="sort" data-sort-direction="asc" data-sort="type">Type</th>
+            <th data-action="sort" data-sort-direction="asc" data-sort="desc">Description</th>
+            <th data-action="sort" data-sort-direction="asc" data-sort="age">Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- animal template will be copied and inserted here -->
+        </tbody>
+      </table>
+    </section>
+    <template id="animal">
+      <tr>
+        <td data-field="name">NAME</td>
+        <td data-field="type">TYPE</td>
+        <td data-field="desc">DESCRIPTION</td>
+        <td data-field="age">AGE</td>
       </tr>
-    </thead>
-    <tbody>
-      <!-- animal template will be copied and inserted here -->
-    </tbody>
-  </table>
-</section>
-  <template id="animal">
-    <tr>
-      <td data-field="name">NAME</td>
-      <td data-field="type">TYPE</td>
-      <td data-field="desc">DESCRIPTION</td>
-      <td data-field="age">AGE</td>
-    </tr>
-  </template>
-</main>
+    </template>
+  </main>
   <footer></footer>
 </body>
 

@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(228, 100, 93, 0.845);
+}
+:root {
+    --bg: #fae4b5;
+    --ctabg1: #ffde96;
+    --ctabg2: #f8ce76;
+    --ctaborder: #f685342c;
+}
+body {
+    background-color: var(--bg);
+}
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+h2 {
+    text-decoration: underline;
+    padding: 0.25rem
+}
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 0.5rem;
+    gap: 2rem;
+}
+header h1 {
+    place-self: center;
+    text-decoration: underline;
+}
+header > a {
+    text-decoration: none;
+    padding: 0.5rem;
+    border: solid 2px var(--ctaborder);
+    border-radius: 1rem;
+    background-color: var(--ctabg1);
+}
+header > a:hover {
+    color: rgb(138, 72, 72);
+    background-color: var(--ctabg2);
+}
+section {
+    display: grid;
+    padding: 1rem;
+    margin: auto;
+    align-items: center;
+    background-color: var(--ctabg1);
+    border: solid 2px var(--ctaborder);
+    border-radius: 0.5rem;
+    width: fit-content;
+    gap: 1rem;
+}
+div.list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+form {
+    display: grid;
+    justify-self: center;
+    grid-template-columns: auto 1fr;
+    padding: 0.25rem;
+    gap: 1rem;
+}
+.list-task {
+    width: 20ch;
+}
+button {
+    display: block;
+    border-radius: 0.25rem;
+    border: 2px solid var(--ctaborder);
+    background-color: white;
+}
+button.deleteButton {
+    display: block;
+    border-radius: 0.25rem;
+    border: 2px solid var(--ctaborder);
+    background-color: white;
+}
+button:hover {
+    background-color: var(--ctabg2);
+}
+input {
+    width: fit-content;
+    border: solid 2px var(--ctaborder);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    background-color: white;
+}
+input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+}
+input:focus {
+    border: solid 2px var(--ctaborder);
+}
+ul {
+    display: grid;
+    gap: 0.5rem;
+}
+ul li {
+    display: grid;
+    grid-template-columns: 30px 2fr 80px;
+    padding: 0.25rem;
+    justify-content: space-between;
+    gap: 0.15rem;
+}
+.info {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.hidden {
+    display: none;
+}
+.finished {
+    text-decoration: line-through;
+}

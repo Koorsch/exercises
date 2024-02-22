@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../basics.css">
+    <meta name="robots" content="none">
+    <title>Assignment 5 - To Do (app)</title>
+    <link rel="stylesheet" href="assignment5.css">
     <script type="module" src="assignment5.js"></script>
-    <title>ToDO list</title>
 </head>
-
 <body>
     <header>
         <a class="pulse" href="../index.html">Go Back</a>
-        <h1>To Do List</h1>
-        <span></span>
+        <h1>To Do</h1>
     </header>
-    <main>
-        <section></section>
-    </main>
-    <footer></footer>
+<main>
+        <section class="">
+            <form id="taskSubmit">
+                <label for="count">Amount: </label>
+                <input type="number" id="count" name="count" placeholder="1" value="1">
+                <label for="inputValue">Put your task here: </label>
+                <input type="text" name="inputValue" id="inputValue" placeholder="A new todo?">
+                <button type="submit" id="add">Add item</button>
+                
+            </form>
+        </section>
+        <section class="">
+            <h3>To Do's for today</h3>
+            <ul class="todoList">
+            </ul>
+            <button type="button" id="removeALL">> !Clear ALL! <</button>
+        </section>
+</main>
+        <template>
+            <li class="list-item">
+                <label class="check-container">
+                    <input type="checkbox" name="check" id="check">
+                </label> 
+                <div class="info">
+                    <span id="list-count">#</span><p class="list-task"></p>
+                </div>
+                <button class="deleteButton" id="delete"></button>
+            </li>
+        </template>
 </body>
-
 </html>
